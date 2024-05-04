@@ -5,8 +5,6 @@ service: notes-api
 package:
   individually: true
 
-resources:
-  - ${file(resources/api-gateway-errors.yml)}
 
 plugins:
   - serverless-bundle # Package our functions with Webpack
@@ -85,3 +83,7 @@ functions:
           method: delete
           authorizer: aws_iam
           cors: true
+
+
+resources:
+  - ${file(resources/api-gateway-errors.yml)}
